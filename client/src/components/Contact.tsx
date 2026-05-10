@@ -103,10 +103,10 @@ export default function Contact() {
             <div className="mb-6 p-4 rounded-xl border border-slate-200 bg-white/60">
               <p className="text-slate-500 text-xs font-medium tracking-wide uppercase mb-1">Call or text</p>
               <a
-                href="tel:+14708741775"
+                href="tel:+14707529092"
                 className="text-lg font-heading font-bold text-slate-900 hover:text-[#1f6fb2] transition-colors"
               >
-                (470) 874-1775
+                (470) 752-9092
               </a>
               <p className="text-slate-500 text-xs mt-1">Speak with our team or leave a message for a callback.</p>
             </div>

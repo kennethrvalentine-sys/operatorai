@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Center: Phone + Links */}
           <div className="flex flex-col gap-3">
             <a href="tel:+14708741775" className="text-slate-500 hover:text-slate-900 text-sm transition-colors font-medium">
-              (470) 874-1775
+              (470) 752-9092
             </a>
             <div className="flex items-center gap-6">
               <a href="#" className="text-slate-500 hover:text-slate-900 text-sm transition-colors nav-link-live">

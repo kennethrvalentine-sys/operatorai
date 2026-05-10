@@ -53,10 +53,10 @@ export default function Navbar() {
         {/* Desktop Right side */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:+14708741775"
+            href="tel:+14707529092"
             className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium"
           >
-            (470) 874-1775
+            (470) 752-9092
           </a>
           <a
             href="#contact"
@@ -90,11 +90,11 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="tel:+14708741775"
+              href="tel:+14707529092"
               onClick={() => setMobileOpen(false)}
               className="text-sm text-slate-600 hover:text-slate-900 py-2 transition-colors"
             >
-              (470) 874-1775
+              (470) 752-9092
             </a>
             <a
               href="#contact"
