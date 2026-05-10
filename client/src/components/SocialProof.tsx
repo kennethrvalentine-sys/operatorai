@@ -3,7 +3,7 @@
  * More visible: slightly brighter background, stronger border, bigger text
  */
 import { useEffect, useRef, useState } from "react";
-import { Clock, Zap, TrendingUp } from "lucide-react";
+import { Clock, PhoneOff, Workflow } from "lucide-react";
 
 interface StatProps {
   icon: React.ReactNode;
@@ -18,8 +18,8 @@ function Stat({ icon, value, label }: StatProps) {
         {icon}
       </div>
       <div>
-        <div className="text-white font-heading font-bold text-lg sm:text-xl leading-tight">{value}</div>
-        <div className="text-white/40 text-xs sm:text-sm mt-0.5">{label}</div>
+        <div className="text-slate-900 font-heading font-bold text-lg sm:text-xl leading-tight">{value}</div>
+        <div className="text-slate-500 text-xs sm:text-sm mt-0.5">{label}</div>
       </div>
     </div>
   );
@@ -41,28 +41,28 @@ export default function SocialProof() {
   return (
     <div
       ref={ref}
-      className={`relative bg-[#111111] border-y border-white/[0.06] transition-all duration-700 ${
+      className={`relative bg-white border-y border-slate-200 transition-all duration-700 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#2D9CDB]/20 to-transparent" />
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.06]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
           <Stat
             icon={<Clock size={20} />}
-            value="500+ Hours Saved"
-            label="Per Contractor Annually"
+            value="Faster Response"
+            label="Before leads cool off"
           />
           <Stat
-            icon={<Zap size={20} />}
-            value="48hrs → Under 5 Min"
-            label="Average Lead Response Time"
+            icon={<Workflow size={20} />}
+            value="Cleaner Pipeline"
+            label="So follow-up stops slipping"
           />
           <Stat
-            icon={<TrendingUp size={20} />}
-            value="3 Verticals Coming"
-            label="HVAC · Plumbing · Electrical"
+            icon={<PhoneOff size={20} />}
+            value="Fewer Missed Opportunities"
+            label="After hours and during storm spikes"
           />
         </div>
       </div>

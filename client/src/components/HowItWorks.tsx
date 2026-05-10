@@ -8,27 +8,27 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "01",
-    title: "Free Demo Call",
+    title: "Find the Revenue Leak",
     description:
-      "We learn your current workflow, your pipeline gaps, and what's costing you jobs. Honest conversation, no pitch deck.",
+      "We identify the part of the sales process that is costing you jobs right now.",
   },
   {
     number: "02",
-    title: "We Build Your System",
+    title: "Build the Right System",
     description:
-      "Our team builds your custom AI stack. You don't write code, set up integrations, or watch tutorial videos.",
+      "We build the system around your workflow, team, and tools.",
   },
   {
     number: "03",
-    title: "You Approve It",
+    title: "Launch and Test It",
     description:
-      "We walk you through everything live. You see exactly what runs and when. You make the call.",
+      "We install it, test it, and make sure the right leads get the right follow-up at the right time.",
   },
   {
     number: "04",
-    title: "It Runs Without You",
+    title: "Improve the Outcome",
     description:
-      "Leads get followed up. Content goes out. Your CRM stays clean. You get a report every week.",
+      "We refine it around the only outcomes that matter: more booked jobs and less manual follow-up.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function HowItWorks() {
   }, []);
 
   return (
-    <section id="how-it-works" ref={ref} className="py-24 lg:py-32 bg-[#0D0D0D]">
+    <section id="how-it-works" ref={ref} className="py-24 lg:py-32 bg-[#EEF4F8]">
       <div className="container">
         {/* Header */}
         <div
@@ -57,8 +57,8 @@ export default function HowItWorks() {
           <span className="text-[#2D9CDB] text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
             Process
           </span>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight max-w-3xl">
-            Live in 14 Days. Running Without You in 30.
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight max-w-3xl">
+            Simple Process. Measurable Outcome.
           </h2>
         </div>
 
@@ -86,14 +86,14 @@ export default function HowItWorks() {
 
               {/* Number circle */}
               <div className="w-12 h-12 rounded-full bg-[#2D9CDB]/10 border border-[#2D9CDB]/30 flex items-center justify-center mb-5 relative z-10">
-                <span className="text-[#2D9CDB] font-heading font-bold text-sm">{step.number}</span>
+                <span className="text-[#1f6fb2] font-heading font-bold text-sm">{step.number}</span>
               </div>
 
               {/* Content */}
-              <h3 className="font-heading font-bold text-lg text-white mb-3">
+              <h3 className="font-heading font-bold text-lg text-slate-900 mb-3">
                 {step.title}
               </h3>
-              <p className="text-white/45 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {step.description}
               </p>
             </div>

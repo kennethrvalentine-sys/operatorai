@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 60" width="250" height="60">
+  <!-- "overhead" in navy -->
+  <text x="0" y="40" font-family="'DM Sans','Inter',Arial,Helvetica,sans-serif" font-weight="600" font-size="36" fill="#1a2b3c">overhead</text>
+  <!-- "less" in medium blue with a 6px gap after the 'd' -->
+  <text x="156" y="40" font-family="'DM Sans','Inter',Arial,Helvetica,sans-serif" font-weight="800" font-size="36" fill="#2D9CDB">less</text>
+</svg>

@@ -31,24 +31,24 @@ export default function AnimatedGrid() {
     };
 
     const initParticles = () => {
-      const count = Math.floor((canvas.offsetWidth * canvas.offsetHeight) / 15000);
-      particles = Array.from({ length: Math.min(count, 80) }, () => ({
+      const count = Math.floor((canvas.offsetWidth * canvas.offsetHeight) / 10000);
+      particles = Array.from({ length: Math.min(count, 130) }, () => ({
         x: Math.random() * canvas.offsetWidth,
         y: Math.random() * canvas.offsetHeight,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.3 + 0.05,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 2.5 + 0.8,
+        opacity: Math.random() * 0.5 + 0.15,
       }));
     };
 
     const drawGrid = () => {
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
-      const spacing = 60;
+      const spacing = 50;
 
-      ctx.strokeStyle = "rgba(45, 156, 219, 0.03)";
-      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = "rgba(45, 156, 219, 0.06)";
+      ctx.lineWidth = 0.6;
 
       for (let x = 0; x < w; x += spacing) {
         ctx.beginPath();
@@ -89,12 +89,12 @@ export default function AnimatedGrid() {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
+          if (dist < 140) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(45, 156, 219, ${0.04 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(45, 156, 219, ${0.07 * (1 - dist / 140)})`;
+            ctx.lineWidth = 0.7;
             ctx.stroke();
           }
         }
@@ -127,7 +127,7 @@ export default function AnimatedGrid() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.75 }}
     />
   );
 }

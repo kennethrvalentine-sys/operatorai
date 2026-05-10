@@ -4,24 +4,26 @@
  * 3 columns, bold labels, short copy, no icons
  */
 import { useEffect, useRef, useState } from "react";
+import { BadgeDollarSign, Building2, Headset } from "lucide-react";
 
-const ROOFING_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663516046814/8JP5W7DRbnVDHn5RhMag6U/roofing-section-bg-a5P5qTX7bPu97VxQVbCswg.webp";
+const ROOFING_BG = "/hero-bg-roofing-office.png";
+const ROOFING_WORKFLOW = "/storm-season-coverage.png";
 
 const features = [
   {
-    label: "Storm Season Ready",
+    label: "Storm-Season Coverage",
     description:
-      "We build surge capacity into your follow-up system so when hail hits your market, no lead goes cold while you're slammed.",
+      "When hail hits and the phone lights up, your synthetic employee keeps answering, routing, and following up so storm leads do not die in the chaos.",
   },
   {
-    label: "Insurance Job Workflow",
+    label: "Pipeline & Estimate Follow-Up",
     description:
-      "Supplement tracking, adjuster follow-up, Xactimate coordination — automated touchpoints that keep insurance jobs moving.",
+      "The biggest leak is often between first contact and signed job. We build synthetic employees that keep estimates, reminders, and next steps moving.",
   },
   {
-    label: "Retail Pipeline",
+    label: "Roofing Workflow Awareness",
     description:
-      "Year-round retail demand doesn't build itself. We keep your brand in front of homeowners between storms with automated content and email sequences.",
+      "Insurance volume, retail consistency, missed calls, CRM neglect, supplement lag — roofing has its own operational mess. We build for that reality.",
   },
 ];
 
@@ -49,7 +51,7 @@ export default function RoofingSection() {
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: `url(${ROOFING_BG})` }}
       />
-      <div className="absolute inset-0 bg-[#0A0A0A]/80" />
+      <div className="absolute inset-0 bg-[#F7F4EF]/88" />
 
       <div className="container relative z-10">
         {/* Header */}
@@ -61,34 +63,79 @@ export default function RoofingSection() {
           <span className="text-[#2D9CDB] text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
             Industry Expertise
           </span>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight max-w-2xl">
-            We Speak Roofing. Not Just Tech.
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight max-w-3xl">
+            We Build AI Employees for the Way Roofing Companies Actually Operate.
           </h2>
-          <p className="text-white/50 text-lg mt-4 max-w-xl">
-            Most AI agencies don't know what a supplement is. We do.
+          <p className="text-slate-600 text-lg mt-4 max-w-3xl">
+            Roofers do not need generic automation. They need office help that can answer calls, work the CRM, follow up with customers, and keep jobs moving without adding expensive headcount.
           </p>
         </div>
 
-        {/* 3 Columns */}
-        <div className="grid md:grid-cols-3 gap-10 md:gap-12">
-          {features.map((feature, i) => (
-            <div
-              key={feature.label}
-              className={`transition-all duration-700 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-              style={{ transitionDelay: `${200 + i * 150}ms` }}
-            >
-              {/* Accent line */}
-              <div className="w-10 h-0.5 bg-[#2D9CDB] mb-5" />
-              <h3 className="font-heading font-bold text-xl text-white mb-3">
-                {feature.label}
-              </h3>
-              <p className="text-white/45 text-sm leading-relaxed">
-                {feature.description}
-              </p>
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-12">
+            {features.map((feature, i) => (
+              <div
+                key={feature.label}
+                className={`transition-all duration-700 ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: `${200 + i * 150}ms` }}
+              >
+                <div className="w-10 h-0.5 bg-[#2D9CDB] mb-5" />
+                <h3 className="font-heading font-bold text-xl text-slate-900 mb-3">
+                  {feature.label}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div
+            className={`rounded-2xl border border-slate-200 bg-white/92 backdrop-blur-sm p-6 shadow-sm transition-all duration-700 delay-300 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="rounded-xl overflow-hidden border border-slate-200 mb-5">
+              <img
+                src={ROOFING_WORKFLOW}
+                alt="Roofing workflow, CRM, and office operations"
+                className="w-full h-40 object-cover"
+                loading="lazy"
+              />
             </div>
-          ))}
+            <p className="text-[#2D9CDB] text-xs font-semibold tracking-[0.2em] uppercase mb-5">What the role replaces</p>
+            <div className="space-y-4">
+              {[
+                {
+                  icon: <Headset size={18} />,
+                  title: "Missed-call chaos",
+                  text: "Answers, routes, and follows up when the office is slammed.",
+                },
+                {
+                  icon: <Building2 size={18} />,
+                  title: "CRM neglect",
+                  text: "Keeps records updated and jobs moving through the system.",
+                },
+                {
+                  icon: <BadgeDollarSign size={18} />,
+                  title: "Expensive admin drift",
+                  text: "Takes repetitive office work off your payroll growth path.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="w-9 h-9 rounded-lg bg-[#2D9CDB]/15 border border-[#2D9CDB]/25 flex items-center justify-center text-[#2D9CDB] shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-slate-900 font-medium text-sm">{item.title}</p>
+                    <p className="text-slate-600 text-sm mt-1 leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom note */}
@@ -97,8 +144,8 @@ export default function RoofingSection() {
             visible ? "opacity-100" : "opacity-0"
           }`}
         >
-          <p className="text-white/25 text-sm tracking-wide">
-            HVAC · Plumbing · Electrical — <span className="text-[#2D9CDB]/60">Coming Soon</span>
+          <p className="text-slate-500 text-sm tracking-wide">
+            Roofing first. Adjacent trades accepted selectively, but not marketed.
           </p>
         </div>
       </div>

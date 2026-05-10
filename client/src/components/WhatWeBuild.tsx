@@ -4,32 +4,34 @@
  * Bento-grid inspired layout, glass-card style
  */
 import { useEffect, useRef, useState } from "react";
-import { Zap, PenTool, Settings } from "lucide-react";
+import { Bot, PhoneCall, Workflow } from "lucide-react";
+
+const SECTION_IMAGE = "/section-ai-office-employee.png";
 
 const products = [
   {
-    icon: <Zap size={28} />,
-    name: "AI Lead Follow-Up System",
-    tagline: "Stop losing jobs to the contractor who called back first.",
+    icon: <PhoneCall size={28} />,
+    name: "AI Front Desk Employee",
+    tagline: "Answers calls. Responds fast. Books estimates.",
     description:
-      "When a lead comes in — from your website, a referral, or a storm canvass — OperatorAI follows up instantly via text and email, qualifies them, and books the estimate on your calendar. 24/7. No manual effort.",
-    price: "From $497/mo",
+      "We build a synthetic front-desk employee that answers missed calls, responds to new leads, follows up by text and email, and keeps opportunities from going cold.",
+    price: "Starts at $497/mo",
   },
   {
-    icon: <PenTool size={28} />,
-    name: "AI Content Engine",
-    tagline: "Show up online while you're on the roof.",
+    icon: <Workflow size={28} />,
+    name: "AI CRM & Back-Office Employee",
+    tagline: "Works inside the systems you already use.",
     description:
-      "We build a fully automated content system — Google Business posts, Facebook updates, email newsletters, review requests — all produced and published on autopilot. You stay visible. You stay relevant. You don't lift a finger.",
-    price: "From $297/mo",
+      "Your synthetic employee can work inside platforms like AccuLynx, JobNimbus, Salesforce, and similar tools to update records, move jobs through the pipeline, send reminders, and handle repetitive admin work.",
+    price: "Starts at $997/mo",
   },
   {
-    icon: <Settings size={28} />,
-    name: "Full Operations Stack",
-    tagline: "Your entire back-office, automated.",
+    icon: <Bot size={28} />,
+    name: "Custom Synthetic Employee",
+    tagline: "Built around your office bottlenecks.",
     description:
-      "CRM buildout on GoHighLevel, power dialer integration, estimating workflow automation, job tracking, and reporting dashboards. Everything connected. Everything running without you.",
-    price: "From $997/mo",
+      "Need help with estimating follow-up, customer contact, scheduling, pipeline cleanup, or overflow calls during storm season? We build the role around the work you need off your plate.",
+    price: "Custom scope",
   },
 ];
 
@@ -58,12 +60,54 @@ export default function WhatWeBuild() {
           <span className="text-[#2D9CDB] text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
             What We Build
           </span>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight max-w-2xl">
-            AI Systems Built for How Roofers Actually Work
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight max-w-3xl">
+            The Synthetic Employees We Build for Roofers
           </h2>
-          <p className="text-white/50 text-lg mt-4 max-w-xl">
-            Every system is custom to your business. No templates. No guesswork.
+          <p className="text-slate-600 text-lg mt-4 max-w-3xl">
+            These are AI office employees built to reduce admin overload, protect leads, and help you grow without rushing into another payroll hire.
           </p>
+        </div>
+
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 mb-10 items-stretch">
+          <div
+            className={`rounded-2xl overflow-hidden border border-slate-200 shadow-sm min-h-[340px] transition-all duration-700 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "180ms" }}
+          >
+            <img
+              src={SECTION_IMAGE}
+              alt="AI office employee for a roofing company"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div
+            className={`glass-card rounded-2xl p-8 transition-all duration-700 ${
+              visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+            style={{ transitionDelay: "260ms" }}
+          >
+            <span className="text-[#2D9CDB] text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
+              What this gives you
+            </span>
+            <h3 className="font-heading font-bold text-2xl sm:text-3xl text-slate-900 leading-tight mb-5">
+              Office coverage without rushing into another full-time hire.
+            </h3>
+            <div className="space-y-4">
+              {[
+                "Someone answers faster when leads come in.",
+                "Someone keeps the CRM updated and jobs moving.",
+                "Someone follows up when your team is too busy to chase it.",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#2D9CDB] mt-1.5 shrink-0" />
+                  <p className="text-slate-700 text-sm leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Product cards */}
@@ -82,13 +126,13 @@ export default function WhatWeBuild() {
               </div>
 
               {/* Content */}
-              <h3 className="font-heading font-bold text-xl text-white mb-2">
+              <h3 className="font-heading font-bold text-xl text-slate-900 mb-2">
                 {product.name}
               </h3>
               <p className="text-[#2D9CDB] text-sm font-medium mb-4">
                 {product.tagline}
               </p>
-              <p className="text-white/50 text-sm leading-relaxed mb-6">
+              <p className="text-slate-600 text-sm leading-relaxed mb-6">
                 {product.description}
               </p>
 

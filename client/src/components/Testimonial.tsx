@@ -33,18 +33,18 @@ export default function Testimonial() {
           </div>
 
           {/* Quote */}
-          <blockquote className="font-heading text-2xl sm:text-3xl lg:text-4xl font-medium text-white/90 leading-snug mb-8">
-            "We went from losing half our storm leads to booking 80% of them within 48 hours. OperatorAI changed how we run our business."
+          <blockquote className="font-heading text-2xl sm:text-3xl lg:text-4xl font-medium text-slate-900 leading-snug mb-8">
+            "The goal is not more software. The goal is more booked jobs, fewer missed leads, and less time wasted on manual follow-up."
           </blockquote>
 
           {/* Attribution */}
           <div className="flex items-center justify-center gap-3">
             <div className="w-10 h-10 rounded-full bg-[#2D9CDB]/20 flex items-center justify-center">
-              <span className="text-[#2D9CDB] font-heading font-bold text-sm">MR</span>
+              <span className="text-[#2D9CDB] font-heading font-bold text-sm">O</span>
             </div>
             <div className="text-left">
-              <p className="text-white/80 text-sm font-medium">Mike R.</p>
-              <p className="text-white/30 text-xs">Owner, Summit Roofing — Dallas, TX</p>
+              <p className="text-slate-900 text-sm font-medium">Overheadless</p>
+              <p className="text-slate-500 text-xs">How we think about automation for contractors</p>
             </div>
           </div>
         </div>
