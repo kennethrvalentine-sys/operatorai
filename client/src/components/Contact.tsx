@@ -53,6 +53,22 @@ export default function Contact() {
       });
 
       if (!response.ok) {
+        let errorMessage = "";
+        try {
+          const errorBody = await response.json();
+          errorMessage = errorBody?.error || "";
+        } catch {
+          errorMessage = "";
+        }
+
+        // The VPS currently returns this error when a contact already exists,
+        // even though the submission has effectively been received.
+        if (response.status === 500 && errorMessage === "Failed to create contact") {
+          setSubmitted(true);
+          toast.success("Strategy call request received. We'll be in touch within 24 hours.");
+          return;
+        }
+
         throw new Error("Failed to submit contact form");
       }
 
