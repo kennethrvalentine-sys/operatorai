@@ -1,12 +1,11 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/contact",
-      "dest": "https://srv1556835.hstgr.cloud/api/contact"
+      "source": "/api/contact",
+      "destination": "https://srv1556835.hstgr.cloud/api/contact"
     },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/" }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
